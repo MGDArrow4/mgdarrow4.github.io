@@ -1,0 +1,94 @@
+@import '@/assets/__variables.scss';
+
+//----CSS Reset----
+// Указываем box sizing
+*, *::before, *::after {box-sizing: border-box;}
+// Убираем внутренние и внешние отступы, а также стилизацию списков с классом
+ul[class], ol[class] {padding: 0; margin: 0; list-style: none;}
+// Убираем внешние отступы
+body, h1, h2, h3, h4, p, li, figure, figcaption, blockquote, dl, dd {margin: 0;}
+// Выставляем основные настройки по-умолчанию для body
+body {min-height: 100vh; scroll-behavior: smooth; text-rendering: optimizeSpeed; line-height: normal;}
+// Элементы ссылок, у которых нет класса, сбрасываем до дефолтных стилей
+a:not([class]) {text-decoration-skip-ink: auto;}
+// Упрощаем работу с изображениями
+img {max-width: 100%; display: block;}
+// Наследуем шрифты для инпутов и кнопок
+input, button, textarea, select {font: inherit;}
+// Сбрасываем стиль ссылок
+a {color: inherit; text-decoration: inherit;}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+
+html {
+	width: 100vw;
+	height: 100dvh;
+	overflow: hidden;
+}
+
+body {
+	background-color: $col-bg-dark;
+	color: $col-text;
+	font-size: 15px;
+	font-family: 'Oswald', sans-serif;
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+}
+
+h1 {
+	width: 100%;
+	height: calc(8dvh - 10px);
+	line-height: calc(8dvh - 10px);
+	margin-bottom: 5px;
+	font-size: 1.8em;
+	text-align: center;
+	font-weight: 500;
+	background-color: $col-bg-hover;
+}
+h2 {
+	width: 100%;
+	// height: calc(6dvh - 10px);
+	margin-bottom: 5px;
+	font-size: 1.3em;
+	text-align: center;
+	font-weight: 400;
+	background-color: $col-bg-hover;
+	color: $col-basic;
+}
+
+// УПРАВЛЕНИЕ АНИМАЦИЕЙ VUE-ROUTER
+// Класс постоянного пребывания во время анимации
+.slide-enter-active,
+.slide-leave-active {
+  transition: 0.4s ease-in-out;
+  overflow: hidden;
+  position: absolute;
+}
+
+.slide-enter-from {
+	translate: 100%;
+}
+.slide-enter-to {
+	translate: 0px;
+	z-index: 5;
+}
+.slide-leave-from {
+	translate: 0px;
+}
+.slide-leave-to {
+	translate: -100%;
+	z-index: 4;
+}
+
+
+// Переменные для офлайн режима
+:root{
+	--col-bg: #00191D;
+	--col-main: #002227;
+	--col-main-h: #00373F;
+	--col-focus: #208B9A;
+	--col-basic: #FF7A00;
+}
